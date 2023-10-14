@@ -1,5 +1,6 @@
 package com.perfonalprojects.videochatmvp.room;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.perfonalprojects.videochatmvp.textchat.TextChat;
 import com.perfonalprojects.videochatmvp.user.AppUser;
 
@@ -24,6 +25,7 @@ import lombok.Builder.Default;
 @Entity
 @Data
 @Builder
+@JsonFilter("RoomFilter")
 public class Room {
 
     @Id
@@ -37,17 +39,21 @@ public class Room {
     @Embedded
     @Nonnull
     @NotNull
+    @JsonFilter("RoomDetailsFilter")
     private RoomDetails roomDetails;
 
     @Nonnull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JsonFilter("AdminFilter")
     private AppUser admin;
     
     @Default
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.DETACH)
+    @JsonFilter("ParticipantsFilter")
     private List<AppUser> participants = new ArrayList<>();
 
     @Default
     @OneToMany(cascade = CascadeType.REMOVE)
+    @JsonFilter("TextChatsFilter")
     private List<TextChat> textChats = new ArrayList<>();
 }
