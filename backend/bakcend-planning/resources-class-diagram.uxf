@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>356</x><y>0</y><w>297</w><h>189</h></coordinates><panel_attributes>User
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>324</x><y>19</y><w>297</w><h>189</h></coordinates><panel_attributes>User
 Package::com.perfonalprojects.videochatmvp.user
 
 --
@@ -6,13 +6,7 @@ Package::com.perfonalprojects.videochatmvp.user
 +password: String 
 +userDetails: UserDetails
 +currentRoom: Room
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>761</x><y>279</y><w>279</w><h>198</h></coordinates><panel_attributes>Room
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>729</x><y>298</y><w>279</w><h>198</h></coordinates><panel_attributes>Room
 Package::com.perfonalprojects.videochatmvp.room
 
 --
@@ -22,13 +16,7 @@ Package::com.perfonalprojects.videochatmvp.room
 +admin: User
 +participants: User[]
 +textChats: TextChat[]
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>365</x><y>279</y><w>297</w><h>171</h></coordinates><panel_attributes>TextChat
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>333</x><y>298</y><w>297</w><h>171</h></coordinates><panel_attributes>TextChat
 Package::com.perfonalprojects.videochatmvp.textchat
 
 --
@@ -36,39 +24,19 @@ Package::com.perfonalprojects.videochatmvp.textchat
 +participants: User[]
 +admins: User[]
 +messages: TextMessage[]
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>743</x><y>36</y><w>297</w><h>171</h></coordinates><panel_attributes>UserDetails
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>55</y><w>297</w><h>153</h></coordinates><panel_attributes>UserDetails
 Package::com.perfonalprojects.videochatmvp.user
 
 --
 +user: User
 +description: String
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>81</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>482</x><y>180</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>180</y><w>135</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;90;130;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1148</x><y>279</y><w>279</w><h>171</h></coordinates><panel_attributes>RoomDetails
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>100</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>199</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>199</y><w>135</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;90;130;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1116</x><y>298</y><w>279</w><h>171</h></coordinates><panel_attributes>RoomDetails
 Package::com.perfonalprojects.videochatmvp.room
 
 --
 -room: Room
 -title: String
--description: Description
-
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>32</x><y>279</y><w>297</w><h>171</h></coordinates><panel_attributes>TextMessage
+-description: Description</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>298</y><w>297</w><h>171</h></coordinates><panel_attributes>TextMessage
 Package::com.perfonalprojects.videochatmvp.textchat
 --
 +id: Long
@@ -76,24 +44,11 @@ Package::com.perfonalprojects.videochatmvp.textchat
 +time: TimeStamp
 +textChat: TextChat
 +author: User
-
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>180</y><w>99</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>329</x><y>351</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>396</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>653</x><y>360</y><w>126</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1031</x><y>351</y><w>135</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>365</x><y>504</y><w>306</w><h>171</h></coordinates><panel_attributes>TextChatDetails
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>199</y><w>99</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>370</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>415</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>621</x><y>379</y><w>126</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>370</y><w>135</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>333</x><y>523</y><w>306</w><h>171</h></coordinates><panel_attributes>TextChatDetails
 Package::com.perfonalprojects.videochatmvp.textchat
 
 --
 -textChat: TextChat
 -title: Sting
 -desciption: String
---
-#Operation(i: int): int
-/+AbstractOperation()/
---
-Responsibilities
--- Resp1
--- Resp2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>509</x><y>441</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>428</x><y>441</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;70</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>460</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>460</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>343</y><w>135</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>127</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>199</y><w>135</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>30;30;10;10;130;110</additional_attributes></element></diagram>
