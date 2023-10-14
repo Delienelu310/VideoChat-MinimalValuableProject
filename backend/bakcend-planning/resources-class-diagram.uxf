@@ -1,13 +1,14 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>381</x><y>167</y><w>252</w><h>147</h></coordinates><panel_attributes>AppUser
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>297</x><y>198</y><w>324</w><h>189</h></coordinates><panel_attributes>AppUser
 Package::com.perfonalprojects.videochatmvp.user
 
 --
 -username: String
 -password: String 
--authorities: AppAuthority[]
+-authorities: List&lt;AppAuthority&gt;
 -userDetails: UserDetails
 -currentRoom: Room
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>717</x><y>384</y><w>217</w><h>154</h></coordinates><panel_attributes>Room
+-createdRooms: List&lt;Room&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>729</x><y>477</y><w>279</w><h>198</h></coordinates><panel_attributes>Room
 Package::com.perfonalprojects.videochatmvp.room
 
 --
@@ -15,29 +16,27 @@ Package::com.perfonalprojects.videochatmvp.room
 -roomPassword: String
 -roomDetails: RoomDetails
 -admin: AppUser
--participants: AppUser[]
--textChats: TextChat[]
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>409</x><y>384</y><w>231</w><h>133</h></coordinates><panel_attributes>TextChat
+-participants: List&lt;AppUser&gt;
+-textChats: List&lt;TextChat&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>333</x><y>477</y><w>297</w><h>171</h></coordinates><panel_attributes>TextChat
 Package::com.perfonalprojects.videochatmvp.textchat
 
 --
 -id: Long
--participants: AppUser[]
--admins: AppUser[]
--messages: TextMessage[]
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>703</x><y>195</y><w>231</w><h>119</h></coordinates><panel_attributes>UserDetails
+-participants: List&lt;AppUser&gt;
+-admin: AppUser
+-messages: List&lt;TextMessage&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>711</x><y>234</y><w>297</w><h>153</h></coordinates><panel_attributes>UserDetails
 Package::com.perfonalprojects.videochatmvp.user
 
 --
-+user: AppUser
-+description: String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>626</x><y>230</y><w>91</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>307</y><w>21</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>626</x><y>307</y><w>105</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;90;130;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1018</x><y>384</y><w>217</w><h>133</h></coordinates><panel_attributes>RoomDetails
+-description: String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>279</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>378</y><w>27</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>378</y><w>135</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>110;90;130;110;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1116</x><y>477</y><w>279</w><h>171</h></coordinates><panel_attributes>RoomDetails
 Package::com.perfonalprojects.videochatmvp.room
 
 --
--room: Room
 -title: String
--description: Description</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>384</y><w>231</w><h>133</h></coordinates><panel_attributes>TextMessage
+-description: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>477</y><w>297</w><h>171</h></coordinates><panel_attributes>TextMessage
 Package::com.perfonalprojects.videochatmvp.textchat
 --
 -id: Long
@@ -45,17 +44,16 @@ Package::com.perfonalprojects.videochatmvp.textchat
 -time: TimeStamp
 -textChat: TextChat
 -author: AppUser
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>339</x><y>307</y><w>84</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>381</x><y>440</y><w>42</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>475</y><w>49</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>633</x><y>447</y><w>98</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>927</x><y>440</y><w>105</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>409</x><y>559</y><w>238</w><h>133</h></coordinates><panel_attributes>TextChatDetails
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>243</x><y>378</y><w>108</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>549</y><w>54</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>20;10;10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>594</y><w>63</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>621</x><y>558</y><w>126</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>90;10;120;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>549</y><w>135</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>40;10;10;10;130;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>333</x><y>702</y><w>306</w><h>171</h></coordinates><panel_attributes>TextChatDetails
 Package::com.perfonalprojects.videochatmvp.textchat
 
 --
--textChat: TextChat
 -title: Sting
 -desciption: String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>521</x><y>510</y><w>21</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>458</x><y>510</y><w>21</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>927</x><y>419</y><w>105</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>626</x><y>251</y><w>91</w><h>21</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>626</x><y>307</y><w>105</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>30;30;10;10;130;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>367</x><y>13</y><w>294</w><h>91</h></coordinates><panel_attributes>AppAuthority
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>477</x><y>639</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>639</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>999</x><y>522</y><w>135</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>306</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>378</y><w>135</w><h>117</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>30;30;10;10;130;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>279</x><y>0</y><w>378</w><h>117</h></coordinates><panel_attributes>AppAuthority
 Package::com.perfonalprojects.videochatmvp.user
 
 --
 -user: AppUser
 -authority: String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>507</x><y>97</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>458</x><y>97</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;100;10;10</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>108</y><w>27</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>396</x><y>108</y><w>27</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;100;10;10</additional_attributes></element></diagram>

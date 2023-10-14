@@ -1,6 +1,8 @@
 package com.perfonalprojects.videochatmvp.user;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.Min;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -8,5 +10,7 @@ import lombok.Data;
 @Data
 @Builder
 public class UserDetails {
-    private AppUser user;
+
+    @Min(1)
+    private String description;
 }
