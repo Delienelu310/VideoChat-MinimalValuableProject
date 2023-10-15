@@ -3,9 +3,8 @@ package com.perfonalprojects.videochatmvp.textchat;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Embeddable;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-
+import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,9 +15,9 @@ public class TextChatDetails {
 
     @Nonnull
     @NotNull
-    @Min(1)
+    @Size(min=1)
     private String title;
 
-    @Min(1)
+    @Size(min=1)
     private String description;
 }

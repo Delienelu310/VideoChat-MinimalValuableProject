@@ -7,8 +7,9 @@ import com.perfonalprojects.videochatmvp.user.AppUser;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Min;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 
@@ -22,15 +23,17 @@ public class TextMessage {
 
     @Nonnull
     @NotNull
-    @Min(1)
+    @Size(min=1)
     private String content;
 
     @Nonnull
     private LocalDateTime timestamp;
 
     @Nonnull
+    @ManyToOne
     private TextChat textChat; 
 
     @Nonnull
+    @ManyToOne
     private AppUser author;
 }

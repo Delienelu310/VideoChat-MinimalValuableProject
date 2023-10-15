@@ -13,9 +13,5 @@ public class AppAuthority {
 
     @Nonnull
     @NotNull
-    private AppUser user;
-    
-    @Nonnull
-    @NotNull
     private String authority;
 }

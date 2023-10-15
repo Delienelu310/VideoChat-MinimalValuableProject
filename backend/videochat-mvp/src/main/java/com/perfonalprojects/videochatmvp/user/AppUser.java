@@ -5,6 +5,7 @@ import com.perfonalprojects.videochatmvp.room.Room;
 import java.util.List;
 import java.util.ArrayList;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -13,9 +14,8 @@ import jakarta.persistence.OneToMany;
 import jakarta.annotation.Nonnull;
 import org.hibernate.annotations.Check;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-
+import jakarta.validation.constraints.Size;
 
 import lombok.Builder;
 import lombok.Data;
@@ -33,16 +33,15 @@ public class AppUser {
     
     @NotNull
     @Nonnull
-    @Min(7)
+    @Size(min=7)
     @Check(constraints = "LENGTH(password) > 6")
     private String password;
 
     @Embedded
     @Nonnull
-    private UserDetails userDetails;
+    private AppUserDetails appUserDetails;
 
-    @Embedded
-    @Nonnull
+    @ElementCollection
     @Default 
     private List<AppAuthority> authorities = new ArrayList<>();
 

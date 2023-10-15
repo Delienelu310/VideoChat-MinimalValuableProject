@@ -3,6 +3,7 @@ package com.perfonalprojects.videochatmvp.room;
 import java.util.Optional;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,9 @@ import jakarta.validation.Valid;
 @RestController
 public class RoomController {
     
+    @Autowired
     public RoomJpaRepository roomJpaRepository;
+    @Autowired
     public UserJpaRepository userJpaRepository;
 
     @GetMapping("/rooms/{id}")
