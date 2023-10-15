@@ -26,7 +26,9 @@ import lombok.Builder.Default;
 @Data
 @Builder
 public class AppUser {
+
     @Id
+    @NotNull
     private String username;
     
     @NotNull
@@ -45,7 +47,7 @@ public class AppUser {
     private List<AppAuthority> authorities = new ArrayList<>();
 
     @ManyToOne
-    private Room room;
+    private Room currentRoom;
 
     @OneToMany
     @Default
