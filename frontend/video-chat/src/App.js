@@ -6,6 +6,7 @@ import AuthProvider from './security/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Welcome from './pages/Welcome';
+import Room from './pages/Room';
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
               <Route path="/" component={Welcome}/>
               <Route path="/register" component={Register}/>
               <Route path="/login" component={Login}/>
-
+              <Route path="/room/:roomId" component={Room}/>
+          
             </Routes>
           </BrowserRouter>
         </AuthProvider>
