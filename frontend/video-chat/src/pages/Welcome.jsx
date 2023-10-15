@@ -25,7 +25,7 @@ export default function Welcome(){
     function addNewRoom(){
         addRoom({title, username, password: creationPassword})
             .then(response => {
-                if(response.status != 200) throw Exception(response);
+                if(response.status != 200) throw (response);
 
                 setRoomAdded(true);
                 refreshList();
@@ -36,9 +36,9 @@ export default function Welcome(){
     function enterTheRoom(){
         enterRoom({roomId, username, password: enteringPassword})
             .then(response => {
-                if(response.status != 200) throw Exception(response);
+                if(response.status != 200) throw (response);
 
-                navigate(`/rooms/${roomId}/user/${username}`);
+                navigate(`/rooms/${roomId}`);
             })
             .catch(error => setError(error));
     }
@@ -46,7 +46,7 @@ export default function Welcome(){
     function refreshList(){
         getAllRooms()
             .then(response => {
-                if(response.status != 200) throw Exception(response);
+                if(response.status != 200) throw (response);
                 setRooms(response.data);
             }).catch(error => {
                 setError(error);
@@ -57,7 +57,7 @@ export default function Welcome(){
 
     return (
         <div className="welcome m-5">
-            <h2 className="m-2">Welcome</h2>
+            <h2 className="m-2">Welcome {isAuthorised && username}</h2>
             <p className="m-2">To create or enter the room, you need to be logged in</p>
             
             {isAuthorised && 

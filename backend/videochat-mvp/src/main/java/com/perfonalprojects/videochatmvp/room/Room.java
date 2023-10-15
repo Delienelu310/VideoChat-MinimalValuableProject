@@ -11,29 +11,29 @@ import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-
-import lombok.Builder;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.Builder.Default;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
+@NoArgsConstructor
 @JsonFilter("RoomFilter")
 public class Room {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @NotNull
     @Nonnull
-    @Min(1)
+    @Size(min=1)
     private String roomPassword;
 
     @Embedded
@@ -42,17 +42,15 @@ public class Room {
     @JsonFilter("RoomDetailsFilter")
     private RoomDetails roomDetails;
 
-    @Nonnull
+
     @ManyToOne(cascade = CascadeType.DETACH)
     @JsonFilter("AdminFilter")
     private AppUser admin;
     
-    @Default
     @ManyToMany(cascade = CascadeType.DETACH)
     @JsonFilter("ParticipantsFilter")
     private List<AppUser> participants = new ArrayList<>();
 
-    @Default
     @OneToMany(cascade = CascadeType.REMOVE)
     @JsonFilter("TextChatsFilter")
     private List<TextChat> textChats = new ArrayList<>();

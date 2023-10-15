@@ -13,11 +13,11 @@ export function deleteRoom({roomId}){
 }
 
 export function addRoom({title, password, username}){
-    return apiClient.post(`/users/${username}/rooms`, {password, roomDetails: {title}});
+    return apiClient.post(`/users/${username}/rooms`, {roomPassword: password, roomDetails: {title}});
 }
 
 export function enterRoom({roomId, password, username}){
-    return apiClient.put(`/rooms/${roomId}/add/participant/${username}`, {value: password})
+    return apiClient.put(`/rooms/${roomId}/add/participant/${username}`, {roomDetails: {title: "title"}, roomPassword: password})
 }
 
 export function exitRoom({roomId, username}){

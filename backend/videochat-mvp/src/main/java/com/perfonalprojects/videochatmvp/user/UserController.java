@@ -45,12 +45,12 @@ public class UserController {
         return mappingJacksonValue;
     }
 
-    @PostMapping("/login/{username}")
-    public void login(@PathVariable("username") String username, @RequestBody String password){
-        Optional<AppUser> user = userJpaRepository.findById(username);
+    @PostMapping("/login")
+    public void login( @RequestBody AppUser userBody){
+        Optional<AppUser> user = userJpaRepository.findById(userBody.getUsername());
         if(user.isEmpty()){
             throw new RuntimeException("The user with this id does not exist");
-        }else if(! user.get().getPassword().equals(password)){
+        }else if(! user.get().getPassword().equals(userBody.getPassword())){
             throw new RuntimeException("The password is incorrect");
         }
     }
@@ -58,7 +58,7 @@ public class UserController {
     @PostMapping("/register")
     public void registerUser(@Valid @RequestBody AppUser user){
         if(user.getAppUserDetails() == null){
-            user.setAppUserDetails(new AppUserDetails(null));
+            user.setAppUserDetails(new AppUserDetails());
         }
         userJpaRepository.save(user);
     }

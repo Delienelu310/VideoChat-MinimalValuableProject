@@ -8,30 +8,40 @@ export const useAuth = () => useContext(AuthContext);
 
 export default function AuthProvider({children}){
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     function register({username, password}){
+        console.log(password);
+        console.log(username);
         return apiClient.post(`/register`, {username, password})
             .then(response => {
                 if(response.status != 200){
-                    throw response;
+                    logout();
+                    return false;
                 }
-                login({username, password});
+                return login({username, password});
             }).catch(error => {
+                console.log(error);
                 logout();
+                return false;
             });
     }
 
     function login({username, password}){
-        return apiClient.post(`/login/${username}`, {value: password})
+        return apiClient.post(`/login`, {username, password})
             .then(response => {
-                if(response.status != 200) throw response;
+                if(response.status != 200){
+                    logout();
+                    return false;
+                };
 
                 setUsername(username);
                 setAuthorised(true);
-                navigate("/");
+
+                return true;
             }).catch(error => {
                 logout();
+                return false;
             });
     }
 

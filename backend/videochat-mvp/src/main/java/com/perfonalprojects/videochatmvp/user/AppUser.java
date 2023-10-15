@@ -17,18 +17,16 @@ import org.hibernate.annotations.Check;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.Builder.Default;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Data
-@Builder
+@NoArgsConstructor
 public class AppUser {
 
     @Id
-    @NotNull
     private String username;
     
     @NotNull
@@ -42,13 +40,11 @@ public class AppUser {
     private AppUserDetails appUserDetails;
 
     @ElementCollection
-    @Default 
     private List<AppAuthority> authorities = new ArrayList<>();
 
     @ManyToOne
     private Room currentRoom;
 
     @OneToMany
-    @Default
     private List<Room> createdRooms = new ArrayList<>();
 }

@@ -8,16 +8,18 @@ export default function Header(){
     return (
         <div className="header">
             {isAuthorised ?
-                <>
-                    <Link to="/register">Register</Link>
-                    <Link to="/login">Login</Link>
-                </>    
-                :
-                <>
-                    <button onClick={logout}>Log out</button>
-                    <Link>Account</Link>
-                </>
+                
+                    <>
+                        <button className="m-2" onClick={logout}>Log out</button>
+                        <Link className="m-2" >Account</Link>
+                    </>
+                    :
+                    <>
+                        <Link className="m-2" to="/register">Register</Link>
+                        <Link className="m-2" to="/login">Login</Link>
+                    </>
             }
+            <hr/>
         
         </div>
     );

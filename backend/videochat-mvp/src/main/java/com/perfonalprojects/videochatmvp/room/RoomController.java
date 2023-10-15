@@ -39,6 +39,7 @@ public class RoomController {
         MappingJacksonValue result = new MappingJacksonValue(room.get());
         FilterProvider filterProvider = new SimpleFilterProvider()
             .addFilter("RoomFilter", SimpleBeanPropertyFilter.serializeAllExcept("roomPassword", "textChats"))
+            .addFilter("RoomDetailsFilter", SimpleBeanPropertyFilter.serializeAll())
             .addFilter("AdminFilter", SimpleBeanPropertyFilter.filterOutAllExcept("username", "userDetails"))
             .addFilter("ParticipantsFilter", SimpleBeanPropertyFilter.filterOutAllExcept("username", "userDetails"));
         
@@ -55,6 +56,7 @@ public class RoomController {
         MappingJacksonValue result = new MappingJacksonValue(rooms);
         FilterProvider filterProvider = new SimpleFilterProvider()
             .addFilter("RoomFilter", SimpleBeanPropertyFilter.serializeAllExcept("roomPassword", "textChats"))
+            .addFilter("RoomDetailsFilter", SimpleBeanPropertyFilter.serializeAll())
             .addFilter("AdminFilter", SimpleBeanPropertyFilter.filterOutAllExcept("username", "userDetails"))
             .addFilter("ParticipantsFilter", SimpleBeanPropertyFilter.filterOutAllExcept("username", "userDetails"));
         
@@ -79,12 +81,13 @@ public class RoomController {
         if(user.isEmpty()){
             throw new RuntimeException("User with this username does not exist");
         }
+        room.setAdmin(user.get());
 
         roomJpaRepository.save(room);
     }
 
     @PutMapping("/rooms/{room_id}/add/participant/{username}")
-    public void addParticipant(@PathVariable("room_id") Long roomId, @PathVariable("username") String username, @RequestBody String password){
+    public void addParticipant(@PathVariable("room_id") Long roomId, @PathVariable("username") String username, @RequestBody Room roomDetails){
         Optional<Room> room = roomJpaRepository.findById(roomId);
         if(room.isEmpty()){
             throw new RuntimeException("Room with this id was not found");
@@ -95,7 +98,7 @@ public class RoomController {
             throw new RuntimeException("User with this username does not exist");
         }
 
-        if(! room.get().getRoomPassword().equals(password)){
+        if(! room.get().getRoomPassword().equals(roomDetails.getRoomPassword())){
             throw new RuntimeException("Password for the room is invalid");
         }
 

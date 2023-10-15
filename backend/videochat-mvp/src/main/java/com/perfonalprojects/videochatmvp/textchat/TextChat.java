@@ -8,6 +8,7 @@ import java.util.List;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
@@ -21,7 +22,9 @@ import lombok.Builder.Default;
 @Data
 @Builder
 public class TextChat {
+
     @Id
+    @GeneratedValue
     private Long id;
 
     @ManyToOne

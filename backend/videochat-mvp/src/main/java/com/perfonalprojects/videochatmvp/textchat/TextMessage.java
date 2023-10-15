@@ -6,6 +6,7 @@ import com.perfonalprojects.videochatmvp.user.AppUser;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotNull;
@@ -19,6 +20,7 @@ import lombok.Data;
 public class TextMessage {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     @Nonnull
